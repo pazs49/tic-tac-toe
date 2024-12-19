@@ -1,6 +1,7 @@
 import { board } from "./board/board.js";
 
 export const variables = {
+  runOnce: false,
   gameState: "init",
   currentSymbol: "",
   moveCount: 0,

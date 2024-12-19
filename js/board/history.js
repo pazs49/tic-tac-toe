@@ -88,5 +88,8 @@ export const toggleHistory = (isEnabled) => {
   if (isEnabled) {
     variables.historyButtonsEl.classList.add("unhide-flex");
     variables.historyButtonsEl.classList.remove("hide");
+  } else {
+    variables.historyButtonsEl.classList.add("hide");
+    variables.historyButtonsEl.classList.remove("unhide-flex");
   }
 };

@@ -10,28 +10,43 @@ import {
   toggleHistory,
   clearBoardWithGhostMarks,
   anim,
+  clearBoard,
 } from "./board/board.js";
 import { toggleReset } from "./board/reset.js";
 
 export const main = (currState) => {
   switch (currState) {
     case "init":
-      // console.log("Entered state init");
-      addCellsClickListeners([
-        variables.boardUpperPart,
-        variables.boardMiddlePart,
-        variables.boardLowerPart,
-      ]);
-      addQuestionIntroSymbolClickListener([
-        variables.xSymbolEl,
-        variables.oSymbolEl,
-      ]);
-      addHistoryButtonClickListener([
-        variables.undoButtonEl,
-        variables.redoButtonEl,
-        variables.historyButtonEl,
-      ]);
-      addResetButtonClickListener(variables.resetContainerButtonEl);
+      // resetting
+      clearBoard(
+        [
+          variables.boardUpperPart,
+          variables.boardMiddlePart,
+          variables.boardLowerPart,
+        ],
+        variables.board
+      );
+
+      // Guard against adding another event listeners resulting in multiple calls!
+      if (!variables.runOnce) {
+        variables.runOnce = true;
+        // console.log("Entered state init");
+        addCellsClickListeners([
+          variables.boardUpperPart,
+          variables.boardMiddlePart,
+          variables.boardLowerPart,
+        ]);
+        addQuestionIntroSymbolClickListener([
+          variables.xSymbolEl,
+          variables.oSymbolEl,
+        ]);
+        addHistoryButtonClickListener([
+          variables.undoButtonEl,
+          variables.redoButtonEl,
+          variables.historyButtonEl,
+        ]);
+        addResetButtonClickListener(variables.resetContainerButtonEl);
+      }
       setState("picking");
       break;
     case "picking":
@@ -97,3 +112,8 @@ export const main = (currState) => {
 };
 
 main(variables.gameState);
+// setInterval(() => main(variables.gameState), 100);
+
+// setInterval(() => {
+//   console.log("board", variables.board);
+// }, 1000);

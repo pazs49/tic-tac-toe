@@ -2,7 +2,7 @@ export { clearBoardWithGhostMarks } from "./ghostMarker.js";
 export { toggleReset, reset } from "./reset.js";
 export { navigateHistory, toggleHistory, viewHistory } from "./history.js";
 export { setState } from "./gameState.js";
-export { displayBoard } from "./displayBoard.js";
+export { displayBoard, clearBoard } from "./displayBoard.js";
 export { placeMarker } from "./placeMarker.js";
 export { pickSymbol } from "./pickSymbol.js";
 export { checkWinner } from "./checkWinner.js";

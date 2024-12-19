@@ -7,5 +7,6 @@ export const pickSymbol = (event) => {
   } else {
     variables.currentSymbol = "O";
   }
+
   setState("playing");
 };

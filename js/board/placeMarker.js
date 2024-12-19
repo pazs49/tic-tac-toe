@@ -2,7 +2,10 @@ import { variables } from "../variables.js";
 import { anim, checkWinner, displayBoard, setState } from "./board.js";
 import { fillBoardWithGhostMarks } from "./ghostMarker.js";
 
+let counter = 0;
 export const placeMarker = (symbol, cell, rowIndex, colIndex) => {
+  console.log(counter++);
+
   if (variables.gameState !== "playing") setState("playing");
 
   // animation pop
