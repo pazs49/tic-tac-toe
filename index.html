@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/app.js" type="module" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section class="question-intro">
+            <h1>Who will go first? <span class="question-intro__x">X</span> or
+                <span class="question-intro__o">O</span>
+            </h1>
+        </section>
+        <section class="board">
+            <div class="board__upper-part">
+                <div class="board__cell"></div>
+                <div class="board__cell"></div>
+                <div class="board__cell"></div>
+            </div>
+            <div class="board__middle-part">
+                <div class="board__cell"></div>
+                <div class="board__cell"></div>
+                <div class="board__cell"></div>
+            </div>
+            <div class="board__lower-part">
+                <div class="board__cell"></div>
+                <div class="board__cell"></div>
+                <div class="board__cell"></div>
+            </div>
+        </section>
+        <section class="history__buttons hide">
+            <button class="history__undo-button"> Undo </button>
+            <button class="history__redo-button"> Redo </button>
+            <button class="history__history-button">View History</button>
+        </section>
+    </main>
+    <div class="winner-popup hide">
+        <h1>- won!</h1>
+    </div>
+    <div class="reset-container hide">
+        <button class="reset-container__button">Play Again</button>
+    </div>
+    <div class="history-moves-container ">
+        <ol class="history-moves-container__ol">
+            <!-- history LI's here -->
+            <!-- <li>Top Left X</li>
+            <li>Top Left X</li>
+            <li>Top Left X</li>
+            <li>Top Left X</li>
+            <li>Top Left X</li>
+            <li>Top Left X</li> -->
+        </ol>
+    </div>
+</body>
+</html>
